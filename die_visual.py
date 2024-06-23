@@ -1,3 +1,5 @@
+import plotly.express as px
+
 from die import Die
 
 # Create a D6
@@ -16,5 +18,8 @@ for value in poss_results:
     frequency = results.count(value)
     frequencies.append(frequency)
 
-print(results)
+# print(frequencies)
 
+# visualize the results in bar (it could be line or scattered)
+fig = px.bar(poss_results, y=frequencies)
+fig.show()
